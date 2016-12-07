@@ -1016,7 +1016,8 @@ function mm4_you_home_carousel_type_1() {
 						$title = get_sub_field('slide_title');
 						$caption = get_sub_field('slide_caption');?>
 						<img src="<?php echo $image[0] ?>" alt="<?php echo $imageArr[title]; ?>">
-						<span>I&bull;I&#8226;T&#8226;C<br><?php echo $title; ?><br><?php echo $caption; ?></span>
+						<div class="slide-brand-name"><span>I</span><span>I</span><span>T</span><span>C</span></div>
+						<span class="slide-description"><?php echo $title; ?><br><?php echo $caption; ?></span>
 
 						</li>
 					<?php endwhile; ?>

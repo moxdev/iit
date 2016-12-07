@@ -2062,6 +2062,14 @@ object {
 	max-width:none;
 }
 
+#home-carousel.carousel-type-1 .slide-description {
+	margin-top: 1.5em;
+}
+
+#home-carousel.carousel-type-1 .slide-description span {
+	color: green;
+}
+
 ol.carousel-nav {
 	opacity:0;
 	transition:opacity 2s ease-in-out;
