@@ -1010,11 +1010,14 @@ function mm4_you_home_carousel_type_1() {
 					<ul>
 					<?php while ( have_rows('slides') ) : the_row(); ?>
 						<li>
-						<?php $text = get_sub_field('slide_caption');
-						$imageArr = get_sub_field('slide_image');
-						$image = wp_get_attachment_image_src($imageArr[id], 'front-page-slide-1'); ?>
+						<?php $imageArr = get_sub_field('slide_image');
+						$image = wp_get_attachment_image_src($imageArr[id], 'front-page-slide-1');
+						$brand = get_sub_field('slide_brand');
+						$title = get_sub_field('slide_title');
+						$caption = get_sub_field('slide_caption');?>
 						<img src="<?php echo $image[0] ?>" alt="<?php echo $imageArr[title]; ?>">
-						<span><?php echo $text; ?></span>
+						<span>I&bull;I&#8226;T&#8226;C<br><?php echo $title; ?><br><?php echo $caption; ?></span>
+
 						</li>
 					<?php endwhile; ?>
 					</ul>

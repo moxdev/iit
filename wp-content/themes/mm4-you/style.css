@@ -692,7 +692,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #000;
+	color: #fff;
 }
 
 /*a:visited {
@@ -742,7 +742,7 @@ a:active {
 --------------------------------------------------------------*/
 nav ul, ul.social-media, #mobile-menu ul {
 	list-style:none;
-	padding:0;
+	padding:4em 0 0;
 	margin:0;
 }
 
@@ -2179,7 +2179,7 @@ ol.carousel-nav li.active a:hover {
 --------------------------------------------------------------*/
 #home-highlight-wrapper {
 	position: relative;
-	background-color: #777; /*for testing only*/
+	/*background-color: #777;*/ /*for testing only*/
 }
 
 #home-highlight-inner-wrapper {
@@ -2195,11 +2195,35 @@ ol.carousel-nav li.active a:hover {
 }
 
 #home-highlight-inner-wrapper .home-highlight-image {
+	display: block;
+	opacity: .6;
+	width: 100%;
 
 }
 
+#home-highlight-inner-wrapper .home-highlight span.highlight-title {
+/*	position: absolute;
+	display: block;
+	bottom: 0;
+	left: 0;
+	right: 0;*/
+	font-size:1.8em;
+	font-weight:700;
+	margin:0 0 .2em 0;
+}
+
+#home-highlight-inner-wrapper .home-highlight span.highlight-url {
+	margin:1em 0 0 0;
+/*	position: absolute;
+	top: 60%;
+	bottom: 0;
+	left: 0;
+	right: 0;*/
+}
+
 #home-highlight-inner-wrapper .home-highlight, #home-highlight-inner-wrapper .home-highlight a {
-	color:#FFF;
+	/*color:#FFF;*/
+	color:#000;
 }
 
 #home-highlight-inner-wrapper .home-highlight span {
@@ -2208,30 +2232,12 @@ ol.carousel-nav li.active a:hover {
 	line-height:1.1;
 }
 
-#home-highlight-inner-wrapper .home-highlight span.highlight-title {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	font-size:1.8em;
-	font-weight:700;
-	margin:0 0 .2em 0;
-}
 
-#home-highlight-inner-wrapper .home-highlight span.highlight-desc {
+/*#home-highlight-inner-wrapper .home-highlight span.highlight-desc {
 
 	font-size:1.3em;
-}
+}*/
 
-#home-highlight-inner-wrapper .home-highlight span.highlight-url {
-	margin:1em 0 0 0;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
 
 #home-highlight-inner-wrapper .home-highlight span.highlight-url a {
 	text-decoration:none;
