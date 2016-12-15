@@ -281,46 +281,40 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'black';
+  src: url('fonts/SourceSansPro-Black.eot?#iefix') format('embedded-opentype'),  url('fonts/SourceSansPro-Black.otf')  format('opentype'),
+	     url('fonts/SourceSansPro-Black.woff') format('woff'), url('fonts/SourceSansPro-Black.ttf')  format('truetype'), url('fonts/SourceSansPro-Black.svg#SourceSansPro-Black') format('svg');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2) format('woff2');
 }
 
+
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'bold';
+  src: url('fonts/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),  url('fonts/SourceSansPro-Bold.otf')  format('opentype'),
+	     url('fonts/SourceSansPro-Bold.woff') format('woff'), url('fonts/SourceSansPro-Bold.ttf')  format('truetype'), url('fonts/SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
 }
 
+
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'reg';
+  src: url('fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),  url('fonts/SourceSansPro-Regular.otf')  format('opentype'),
+	     url('fonts/SourceSansPro-Regular.woff') format('woff'), url('fonts/SourceSansPro-Regular.ttf')  format('truetype'), url('fonts/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 500;
-  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUZBw1xU1rKptJj_0jans920.woff2) format('woff2');
 }
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 500;
-  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v15/OLffGBTaF0XFOW1gnuHF0Ygp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
-}
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'semi';
+  src: url('fonts/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),  url('fonts/SourceSansPro-Semibold.otf')  format('opentype'),
+	     url('fonts/SourceSansPro-Semibold.woff') format('woff'), url('fonts/SourceSansPro-Semibold.ttf')  format('truetype'), url('fonts/SourceSansPro-Semibold.svg#SourceSansPro-Semibold') format('svg');
+  font-weight: normal;
   font-style: normal;
-  font-weight: 700;
-  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOJBw1xU1rKptJj_0jans920.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC4gp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
 }
 
 body,
@@ -329,7 +323,7 @@ input,
 select,
 textarea {
 	color: #000;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'semi', sans-serif;
 	font-size: 16px;
 	font-size: 1em;
 	line-height: 1.3;
@@ -573,17 +567,15 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	font-size: 0.9em;
+	font-family: 'black', sans-serif;
+	text-transform: uppercase;
+	border: 1px solid #73C92D;
+	border-radius: 0;
+	background: transparent;
+	color: #73C92D;
+	font-size: 1.31025em;
 	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: .5em 1.5em;
 }
 
 button:hover,
@@ -655,10 +647,19 @@ textarea {
 .page-template-frontpage-a .form-quick-contact-wrapper h2, .page-template-frontpage-b .form-quick-contact-wrapper h2 {
 	text-transform:uppercase;
 	text-align:center;
+	color: #006EB6;
+	font-family: 'bold', sans-serif;
+	font-size: 2.6875em;
 }
 
-.page-template-frontpage-a .form-quick-contact-wrapper form, .page-template-frontpage-a .form-quick-contact-wrapper h2, .page-template-frontpage-b .form-quick-contact-wrapper form, .page-template-frontpage-b .form-quick-contact-wrapper h2 {
+.page-template-frontpage-a .form-quick-contact-wrapper form, .page-template-frontpage-b .form-quick-contact-wrapper form {
 	color:#000;
+	font-family: 'regular', sans-serif;
+	font-size: 1.125em;
+}
+
+.page-template-frontpage-a .form-quick-contact-wrapper form .form-submit, .page-template-frontpage-b .form-quick-contact-wrapper form .form-submit {
+	text-align: center;
 }
 
 @media screen and (min-width:975px) {
@@ -831,6 +832,7 @@ nav ul, ul.social-media, #mobile-menu ul {
 }
 
 .main-navigation ul li a {
+	font-family: 'bold', sans-serif;
 	padding:.35em;
 	display: block;
 	text-decoration: none;
@@ -1670,7 +1672,7 @@ aside#address-phone span#side-city, aside#address-phone span.comma, aside#addres
 .page-template-frontpage-a .form-quick-contact-wrapper, .page-template-frontpage-b .form-quick-contact-wrapper {
 	margin:1em;
 	padding:1em 1em 0 1em;
-	border:1px solid #000;
+	/*border:1px solid #000;*/
 	background-color:transparent;
 	max-width:1100px;
 }
@@ -1863,7 +1865,7 @@ object {
 	background-size: cover;
 	width: 100%;
 	height: auto;
-	border-bottom:5px solid green;
+	border-bottom:5px solid #73C92D;
 	padding: 1em 2em;
 }
 
@@ -1940,9 +1942,13 @@ object {
 # Footer
 --------------------------------------------------------------*/
 #colophon {
-	background-color:#000;
+	background-color:#006EB6;
 	padding-top:1em;
-	padding-bottom:1em;
+	padding-bottom:6em;
+}
+
+#colophon #footer-menu {
+	padding: 0;
 }
 
 #colophon, #colophon a {
@@ -1999,6 +2005,10 @@ object {
 	text-align:center;
 }
 
+.page-template-frontpage-a .entry-title {
+	display: none;
+}
+
 .page-template-frontpage-a article, .page-template-frontpage-b article {
 	margin-bottom:1em;
 }
@@ -2045,9 +2055,10 @@ object {
 }
 
 #home-carousel.carousel-type-1 span {
+	font-family: 'black', sans-serif;
 	position:absolute;
 	z-index:10;
-	font-size:1.7em;
+	font-size:1em;
 	line-height:1.1;
 	color:#FFF;
 	text-shadow:2px 2px 4px rgba(0, 0, 0, 1);

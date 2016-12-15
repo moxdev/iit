@@ -15,11 +15,11 @@
 		<?php if( function_exists('mm4_you_highlight_boxes') ) {
 			mm4_you_highlight_boxes();
 		} ?>
-			
+
 		<?php if( is_page_template('frontpage-a.php') || is_page_template('frontpage-b.php') ) {
 			if( function_exists('mm4_you_add_quick_contact_form') ) {
 				mm4_you_add_quick_contact_form();
-			} 
+			}
 		} ?>
 	</div><!-- #content -->
 
@@ -49,17 +49,23 @@
 			<?php endif; ?>
 			<div class="site-info">
 				<div>
-					<?php $add = get_theme_mod('setting_address');
+					<?php $company = get_theme_mod( 'setting_name' );
+					$add = get_theme_mod('setting_address');
 					$city = get_theme_mod('setting_city');
 					$state = get_theme_mod('setting_state');
 					$zip = get_theme_mod('setting_zip');
-					if($add): ?><span class="ftr-contact ftr-address"><?php echo $add; if($add2): echo ', ' . $add2; endif; ?></span><?php endif; if($city || $state || $zip): ?><span class="comma">, </span><?php endif;
+					if ($company): ?><span class="ftr-contact"><?php echo $company; ?><br></span><?php endif;
+
+					if($add): ?><span class="ftr-contact ftr-address"><?php echo $add; ?><br></span><?php endif;
+
 					if ($city): ?><span class="ftr-contact"><?php echo $city; ?></span><?php echo ', ' ; endif;
 					if ($state): ?><span class="ftr-contact"><?php echo $state; ?></span><?php echo ' '; endif;
 					if($zip): ?><span class="ftr-contact"><?php echo $zip; ?></span><?php endif; echo "\n"; ?>
 				</div>
 				<?php $ph = get_theme_mod('setting_phone');
-				if($ph): ?><span id="ph-1"><a class="tel" href="tel:<?php echo $ph; ?>"><?php echo $ph; ?></a></span><?php endif; ?>
+				$fax = get_theme_mod('setting_fax');
+				if($ph): ?><span id="ph-1">Phone: <?php echo $ph; ?></span><br><?php endif;
+				if($fax): ?><span id="ph-1">Fax: <?php echo $fax; ?></span><?php endif; ?>
 			</div><!-- .site-info -->
 		</div><!-- .wrapper -->
 	</footer><!-- #colophon -->
