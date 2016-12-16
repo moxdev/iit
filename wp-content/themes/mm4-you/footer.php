@@ -55,17 +55,15 @@
 					$state = get_theme_mod('setting_state');
 					$zip = get_theme_mod('setting_zip');
 					if ($company): ?><span class="ftr-contact"><?php echo $company; ?><br></span><?php endif;
-
 					if($add): ?><span class="ftr-contact ftr-address"><?php echo $add; ?><br></span><?php endif;
-
 					if ($city): ?><span class="ftr-contact"><?php echo $city; ?></span><?php echo ', ' ; endif;
 					if ($state): ?><span class="ftr-contact"><?php echo $state; ?></span><?php echo ' '; endif;
 					if($zip): ?><span class="ftr-contact"><?php echo $zip; ?></span><?php endif; echo "\n"; ?>
 				</div>
 				<?php $ph = get_theme_mod('setting_phone');
 				$fax = get_theme_mod('setting_fax');
-				if($ph): ?><span id="ph-1">Phone: <?php echo $ph; ?></span><br><?php endif;
-				if($fax): ?><span id="ph-1">Fax: <?php echo $fax; ?></span><?php endif; ?>
+				if($ph): ?><span id="ftr-phone">Phone: <a href="tel:<?php echo $ph; ?>"><?php echo $ph; ?></a></span><br><?php endif;
+				if($fax): ?><span id="ftr-fax">Fax: <?php echo $fax; ?></span><?php endif; ?>
 			</div><!-- .site-info -->
 		</div><!-- .wrapper -->
 	</footer><!-- #colophon -->

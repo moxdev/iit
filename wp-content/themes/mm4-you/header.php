@@ -47,7 +47,7 @@
 			<?php }
 
 			if ( has_nav_menu( 'primary' ) || has_nav_menu( 'aux' ) || has_nav_menu( 'footer' ) ) : ?>
-				<button class="menu-toggle" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mm4-you' ); ?></button>
+				<button class="menu-toggle" aria-expanded="false"><span class="menu-title"></span><?php esc_html_e( '', 'mm4-you' ); ?></button>
 			<?php endif;
 
 			if($ph): ?><div id="masthead-tel"><a class="tel" href="tel:<?php echo $ph; ?>"><?php echo $ph; ?></a></div><?php endif; ?>

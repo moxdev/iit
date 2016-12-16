@@ -46,6 +46,7 @@ function mm4_you_setup() {
 	add_image_size('front-page-slide-2', 1400, 800, true);
 	add_image_size('gallery-main', 1400, 950, true);
 	add_image_size('gallery-thumb', 300, 200, true);
+	add_image_size('highlight', 500, 450, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -1083,25 +1084,19 @@ function mm4_you_highlight_boxes() {
 				<div id="home-highlight-wrapper" class="highlight-<?php echo $rowCount; ?>">
 					<div id="home-highlight-inner-wrapper">
 						<?php while( have_rows('highlights') ): the_row();
+
+						$img = get_sub_field('highlight_image');
 						$title = get_sub_field('highlight_title');
-						$desc = get_sub_field('highlight_description');
-						$linkTxt = get_sub_field('highlight_link_text');
 						$url = get_sub_field('highlight_url');
-						$img = get_sub_field('highlight_image'); ?>
+						$linkTxt = get_sub_field('highlight_link_text');  ?>
 
-							<div class="home-highlight"><?php
+							<div class="home-highlight"> <?php
 
-								if($img): ?><img class="highlight-image" src="<?php echo $img['url']; ?>" /><?php endif;?>
+								if($img): ?><img class="highlight-image" src="<?php echo $img['sizes']['highlight']; ?>" /><?php endif;?>
 
 								<?php if($title): ?><span class="highlight-title"><?php echo $title; ?></span><?php endif; echo "\n";
 
-								if($desc): ?><span class="highlight-desc"><?php echo $desc; ?></span><?php endif; echo "\n";
-
-								if($url): ?><span class="highlight-url"><a href="<?php echo $url; ?>"><?php if($linkTxt): echo $linkTxt . ' &raquo;'; else: ?>Learn More &raquo;<?php endif; ?></a></span><?php endif; echo "\n"; ?>
-
-
-
-
+								if($url): ?><span class="highlight-url"><a href="<?php echo $url; ?>"><?php if($linkTxt): echo $linkTxt . ' &raquo;'; else: ?>Learn More &raquo;<?php endif; ?></a></span><?php endif; echo "\n";  ?>
 							</div>
 						<?php endwhile; ?>
 					</div>
