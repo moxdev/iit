@@ -23,6 +23,15 @@
 	<?php if( function_exists(mm4_you_sidebar_wysiwyg) ) {
 		mm4_you_sidebar_wysiwyg();
 	} ?>
+
+	<?php if( function_exists(mm4_you_sidebar_link) ) {
+		mm4_you_sidebar_link();
+	} ?>
+
+	<?php if( function_exists(mm4_you_sidebar_hot_jobs_link) ) {
+		mm4_you_sidebar_hot_jobs_link();
+	} ?>
+
 	<?php if( function_exists(mm4_you_add_quick_contact_form) ) {
 		mm4_you_add_quick_contact_form();
 	} ?>

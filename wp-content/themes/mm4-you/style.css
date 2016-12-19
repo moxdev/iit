@@ -325,9 +325,7 @@ textarea {
 	color: #000;
 	font-family: 'semi', sans-serif;
 	font-size: 16px;
-	font-size: 1em;
 	line-height: 1.3;
-	font-weight:400;
 }
 
 h1,
@@ -559,7 +557,7 @@ form .asterisk, .error-box {
 label {
 	display:block;
 	font-size:.875em;
-	font-weight:700;
+
 	text-transform:uppercase;
 }
 
@@ -656,8 +654,15 @@ textarea {
 	font-family: 'regular', sans-serif;
 }
 
+.page-template-frontpage-a .form-quick-contact-wrapper form label, .page-template-frontpage-b .form-quick-contact-wrapper form {
+	font-family: inherit;
+	text-transform: capitalize;
+	font-weight: 700;
+}
+
 .page-template-frontpage-a .form-quick-contact-wrapper form .form-submit, .page-template-frontpage-b .form-quick-contact-wrapper form .form-submit {
 	text-align: center;
+	margin-top: 1em;
 }
 
 @media screen and (min-width:975px) {
@@ -700,7 +705,7 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #fff;
+	color: #006EB6;
 }
 
 /*a:visited {
@@ -862,7 +867,8 @@ nav ul, ul.social-media, #mobile-menu ul {
 	top: 1.5em;
 	left: -999em;
 	z-index: 99999;
-	background-color:#FFF;
+	background-color:#006EB6;
+	padding: 0;
 }
 
 .page-template-frontpage-b .main-navigation ul ul {
@@ -903,7 +909,7 @@ nav ul, ul.social-media, #mobile-menu ul {
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
-	background-color:#dedede;
+	background-color:#000;
 }
 
 .main-navigation ul li:hover > ul,
@@ -1428,6 +1434,16 @@ ul.social-media:after,
 /* Search widget. */
 .widget_search .search-submit {
 	display: none;
+}
+
+.widget-area aside {
+	background: url(imgs/tree-white.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	/*padding: 2em;*/
+	/*margin: 1em 2em;*/
+	background-color:#73C92D;
+	color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1973,6 +1989,10 @@ object {
 
 #colophon .site-info {
 	font-family: 'regular', sans-serif;
+}
+
+#colophon .site-info .company-info {
+	margin-bottom: 1em;:;
 }
 
 #colophon .site-info #ftr-phone, #colophon .site-info #ftr-fax {

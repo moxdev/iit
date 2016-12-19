@@ -820,6 +820,28 @@ function mm4_you_sidebar_wysiwyg() {
 	}
 }
 
+function mm4_you_sidebar_link() {
+	if( function_exists('get_field') ) {
+		$sideBarLink = get_field('sidebar_link');
+		if($sideWYSIWYG) { ?>
+			<aside id="custom-sidebar-link">
+				<?php echo $sideBarLink; ?>
+			</aside>
+		<?php }
+	}
+}
+
+function mm4_you_sidebar_hot_jobs_link() {
+	if( function_exists('get_field') ) {
+		$sideBarHotJobs = get_field('sidebar_text');
+		if($sideWYSIWYG) { ?>
+			<aside id="custom-sidebar-link">
+				<?php echo $sideBarHotJobs; ?>
+			</aside>
+		<?php }
+	}
+}
+
 /**
  * QUICK CONTACT FORM
  */

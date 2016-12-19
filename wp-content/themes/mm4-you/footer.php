@@ -48,7 +48,7 @@
 				</nav>
 			<?php endif; ?>
 			<div class="site-info">
-				<div>
+				<div class="company-info">
 					<?php $company = get_theme_mod( 'setting_name' );
 					$add = get_theme_mod('setting_address');
 					$city = get_theme_mod('setting_city');

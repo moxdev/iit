@@ -42,11 +42,11 @@ function mm4_you_quick_contact_form() {
 			<input type="hidden" value="Online Contact Form for <?php echo bloginfo('name'); ?>" name="subject" id="subject">
 			<div class="flex">
 				<div>
-					<label for="contact-names"><span class="asterisk">*</span> Name</label>
+					<label for="contact-names"><span class="asterisk"></span>Name</label>
 					<input type="text" id="contact-names" name="contact-names">
 				</div>
 				<div>
-					<label for="contact-email"><span class="asterisk">*</span> Email</label>
+					<label for="contact-email"><span class="asterisk"></span>Email</label>
 					<input type="email" id="contact-email" name="contact-email">
 				</div>
 				<div>
