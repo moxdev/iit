@@ -940,6 +940,7 @@ function mm4_you_sidebar_hot_jobs_link() {
 
 function mm4_you_contact_page_sidebar() {
 	if(is_page_template('page-contact.php')) {
+		$name = get_theme_mod('setting_name');
 		$add = get_theme_mod('setting_address');
 		$city = get_theme_mod('setting_city');
 		$state = get_theme_mod('setting_state');
@@ -962,29 +963,27 @@ function mm4_you_contact_page_sidebar() {
 
 		if($add || $city || $state || $zip || $ph || $fx || $email) { ?>
 			<aside id="address-phone">
-				<h2>Address/Phone</h2>
-				<?php if($add): ?><span class="side-contact" id="side-address-1"><?php echo $add; ?></span><?php endif;
+				<?php if($name): ?><span class="side-contact" id="side-address-1"><?php echo $name; ?></span><?php endif;
+				if($add): ?><span class="side-contact" id="side-address-1"><?php echo $add; ?></span><?php endif;
 				if($city): ?><span class="side-contact" id="side-city"><?php echo $city; ?></span><?php endif; if($city || $state || $zip): ?><span class="comma">, </span><?php endif; if($state): ?><span class="side-contact" id="side-state"><?php echo $state; ?> </span><?php endif; if($zip): ?><span class="side-contact" id="side-zip"><?php echo $zip; ?></span><?php endif;
-				if($ph): ?><span class="side-contact" id="side-phone"><a href="tel:<?php echo $ph; ?>" class="tel"><?php echo $ph; ?></a></span><?php endif;
-				if($fx): ?><span class="side-contact" id="side-fax"><a href="fax:<?php echo $fx; ?>" class="tel"><?php echo $fx; ?></a></span><?php endif;
+				if($ph): ?><span class="side-contact" id="side-phone"><a href="tel:<?php echo $ph; ?>" class="tel">Phone: <?php echo $ph; ?></a></span><?php endif;
+				if($fx): ?><span class="side-contact" id="side-fax"><a href="fax:<?php echo $fx; ?>" class="tel">Fax: <?php echo $fx; ?></a></span><?php endif;
 				if($email): ?><span class="side-contact" id="side-email"><a href="mailto:<?php echo $email; ?>" target="_blank">Email</a></span><?php endif; ?>
+
+				<div id="directions">
+					<div id="side-map-canvas" class="map-canvas"></div>
+					<form id="form-directions" onSubmit="calcRoute(); return false;">
+						<label for="start">Starting Address</label>
+						<input type="text" id="start" name="start">
+						<input type="hidden" id="end" name="end" value="<?php echo $add . ', ' . $city . ', ' . $state . ' ' . $zip; ?>">
+						<div class="error-box" id="map-error"></div>
+						<input type="button" onclick="calcRoute();" value="Get Directions" class="btn">
+					</form>
+					<div id="directions-panel"></div>
+				</div>
 			</aside>
-		<?php } ?>
-
-		<aside id="directions">
-			<h2>Get Directions</h2>
-			<div id="side-map-canvas" class="map-canvas"></div>
-			<form id="form-directions" onSubmit="calcRoute(); return false;">
-				<label for="start">Starting Address</label>
-				<input type="text" id="start" name="start">
-				<input type="hidden" id="end" name="end" value="<?php echo $add . ', ' . $city . ', ' . $state . ' ' . $zip; ?>">
-				<div class="error-box" id="map-error"></div>
-				<input type="button" onclick="calcRoute();" value="Get Directions" class="btn">
-			</form>
-			<div id="directions-panel"></div>
-		</aside>
-
-	<?php }
+		<?php }
+	}
 }
 
 function mm4_you_contact_page_build_map() {

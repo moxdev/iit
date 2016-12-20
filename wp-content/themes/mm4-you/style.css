@@ -365,8 +365,12 @@ h1 {
 	font-weight:normal;
 	text-transform:uppercase;
 	line-height:1.1;
+	font-family: 'bold', sans-serif;
 }
 
+.content-area h1 {
+	color:#006EB6;
+}
 .entry-content h2 {
 	font-weight:normal;
 	text-transform:uppercase;
@@ -705,6 +709,10 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
+	color: #fff;
+	/*color: #006EB6;*/
+}
+.content-area a {
 	color: #006EB6;
 }
 
@@ -748,6 +756,17 @@ a:active {
 
 .nav-links a {
 	text-decoration:none;
+}
+
+.iit-link {
+	font-family: 'black', sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: 1px solid #73C92D;
+	border-radius: 0;
+	background: transparent;
+	color: #73C92D;
+	padding: .5em 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -1673,7 +1692,7 @@ article.post {
 }
 
 #secondary aside {
-	margin-bottom:1.5em;
+	/*margin-bottom:1.5em;*/
 }
 
 #secondary aside, .form-quick-contact-wrapper {
@@ -2041,7 +2060,7 @@ object {
 ## Contact Page
 --------------------------------------------------------------*/
 .page-template-page-contact  #content {
-	background-color:#bfbfbf;
+	/*background-color:#bfbfbf;*/
 }
 
 /*--------------------------------------------------------------
