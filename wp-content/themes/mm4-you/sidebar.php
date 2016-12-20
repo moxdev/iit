@@ -28,8 +28,8 @@
 		mm4_you_sidebar_link();
 	} ?>
 
-	<?php if( function_exists(mm4_you_sidebar_hot_jobs_link) ) {
-		mm4_you_sidebar_hot_jobs_link();
+	<?php if( function_exists(mm4_you_sidebar_hot_jobs) ) {
+		mm4_you_sidebar_hot_jobs();
 	} ?>
 
 	<?php if( function_exists(mm4_you_add_quick_contact_form) ) {

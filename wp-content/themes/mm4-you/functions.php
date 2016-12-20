@@ -487,6 +487,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
+
 		'menu_order' => 5,
 	));
 	register_field_group(array (
@@ -822,24 +823,47 @@ function mm4_you_sidebar_wysiwyg() {
 
 function mm4_you_sidebar_link() {
 	if( function_exists('get_field') ) {
-		$sideBarLink = get_field('sidebar_link');
-		if($sideWYSIWYG) { ?>
+		if( have_rows( 'sidebar_link' ) ): ?>
 			<aside id="custom-sidebar-link">
-				<?php echo $sideBarLink; ?>
+				<?php while ( have_rows( 'sidebar_link' ) ): the_row();
+					$url = get_sub_field( 'sidebar_link_url' );
+					$text = get_sub_field( 'sidebar_link_text' );
+				?>
+					<div class="sidebar-btn">
+						<a href="<?php echo $url; ?>"><?php echo $text; ?></a>
+					</div>
+				<?php endwhile; ?>
 			</aside>
-		<?php }
+		<?php
+		endif;
 	}
 }
 
-function mm4_you_sidebar_hot_jobs_link() {
-	if( function_exists('get_field') ) {
-		$sideBarHotJobs = get_field('sidebar_text');
-		if($sideWYSIWYG) { ?>
-			<aside id="custom-sidebar-link">
-				<?php echo $sideBarHotJobs; ?>
-			</aside>
-		<?php }
-	}
+function mm4_you_sidebar_hot_jobs() {
+    if( function_exists('get_field') ) {
+        if( have_rows('sidebar_hot_jobs') ): ?>
+            <aside id="hot-jobs-sidebar">
+                <div id="hot-jobs-inner-wrapper">
+                    <?php while( have_rows('sidebar_hot_jobs') ): the_row();
+
+                    $img = get_sub_field('hot_jobs_image');
+                    $title = get_sub_field('hot_jobs_title');
+                    $url = get_sub_field('hot_jobs_url');
+                    $linkTxt = get_sub_field('hot_jobs_link_text');  ?>
+
+                        <div class="hot-jobs-highlight"> <?php
+
+                            if($img): ?><img class="hot-jobs-image" src="<?php echo $img['sizes']['highlight']; ?>" /><?php endif;?>
+
+                            <?php if($title): ?><span class="hot-jobs-title"><?php echo $title; ?></span><?php endif; echo "\n";
+
+                            if($url): ?><span class="hot-jobs-url"><a href="<?php echo $url; ?>"><?php if($linkTxt): echo $linkTxt . ' &raquo;'; else: ?>Learn More &raquo;<?php endif; ?></a></span><?php endif; echo "\n";  ?>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </aside>
+        <?php endif;
+    }
 }
 
 /**
@@ -1034,12 +1058,12 @@ function mm4_you_home_carousel_type_1() {
 						<li>
 						<?php $imageArr = get_sub_field('slide_image');
 						$image = wp_get_attachment_image_src($imageArr[id], 'front-page-slide-1');
-						$brand = get_sub_field('slide_brand');
 						$title = get_sub_field('slide_title');
 						$caption = get_sub_field('slide_caption');?>
 						<img src="<?php echo $image[0] ?>" alt="<?php echo $imageArr[title]; ?>">
-						<div class="slide-brand-name"><span>I</span><span>I</span><span>T</span><span>C</span></div>
-						<span class="slide-description"><?php echo $title; ?><br><?php echo $caption; ?></span>
+						<div class="slide-brand-name">I<span class="brand-bullet">&#8226;</span>I<span class="brand-bullet">&#8226;</span>T<span class="brand-bullet">&#8226;</span>C</div>
+						<div class="slide-description"><?php echo $title; ?></div>
+						<div class="slide-caption"><?php echo $caption; ?></div>
 
 						</li>
 					<?php endwhile; ?>
@@ -1127,6 +1151,37 @@ function mm4_you_highlight_boxes() {
 	}
 }
 
+function mm4_you_hot_jobs() {
+	if(is_page_template('frontpage-a.php') || is_page_template('frontpage-b.php') ) {
+		if( function_exists('get_field') ) {
+			$rows = get_field('highlights');
+			$rowCount = count($rows);
+			$addHighlights = get_field('add_highlight_boxes');
+			if( $addHighlights == 'Yes' && have_rows('highlights') ): ?>
+				<div id="home-highlight-wrapper" class="highlight-<?php echo $rowCount; ?>">
+					<div id="home-highlight-inner-wrapper">
+						<?php while( have_rows('highlights') ): the_row();
+
+						$img = get_sub_field('highlight_image');
+						$title = get_sub_field('highlight_title');
+						$url = get_sub_field('highlight_url');
+						$linkTxt = get_sub_field('highlight_link_text');  ?>
+
+							<div class="home-highlight"> <?php
+
+								if($img): ?><img class="highlight-image" src="<?php echo $img['sizes']['highlight']; ?>" /><?php endif;?>
+
+								<?php if($title): ?><span class="highlight-title"><?php echo $title; ?></span><?php endif; echo "\n";
+
+								if($url): ?><span class="highlight-url"><a href="<?php echo $url; ?>"><?php if($linkTxt): echo $linkTxt . ' &raquo;'; else: ?>Learn More &raquo;<?php endif; ?></a></span><?php endif; echo "\n";  ?>
+							</div>
+						<?php endwhile; ?>
+					</div>
+				</div>
+			<?php endif;
+		}
+	}
+}
 /**
  * PHOTO GALLERY
  */
