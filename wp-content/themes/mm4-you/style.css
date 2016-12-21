@@ -648,7 +648,7 @@ textarea {
 }
 
 .form-quick-contact-wrapper h2 {
-	color:#006EB6
+	color:#006EB6;
 }
 
 .page-template-frontpage-a .form-quick-contact-wrapper h2, .page-template-frontpage-b .form-quick-contact-wrapper h2 {
@@ -1459,7 +1459,8 @@ ul.social-media:after,
 	display: none;
 }
 
-/* Sidebar Wysiwyg */
+/* Sidebar Wysiwyg =========================================*/
+
 .widget-area #custom-sidebar-wysiwyg {
 	background: url(imgs/tree-white.svg);
 	background-size: cover;
@@ -1487,7 +1488,8 @@ ul.social-media:after,
 	margin: 10px;
 }
 
-/* Sidebar Link */
+/* Sidebar Link ========================================== */
+
 .widget-area #custom-sidebar-link {
 	padding: 1em 2em;
 	margin: 0 2.5em 2.5em;
@@ -1495,7 +1497,7 @@ ul.social-media:after,
 	text-align: center;
 }
 
-.widget-area #custom-sidebar-link .sidebar-btn {
+.widget-area #custom-sidebar-link .sidebar-link {
 	padding:0;
 	margin:0;
 }
@@ -1505,19 +1507,23 @@ ul.social-media:after,
 	text-decoration: none;
 	padding: 0;
 	margin: 0;
+	letter-spacing: 1px;
 }
 
-/* Sidebar Hot Jobs */
+
+/* Sidebar Hot Jobs ======================================= */
 
 .widget-area #hot-jobs-sidebar {
-	padding: 0 2.23rem;
-	margin-top: 2em;
+	padding: 0 2.25rem;
+	/*margin-top: 2em;*/
+	letter-spacing: 1px;
 }
 
 #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight {
 	position: relative;
 	text-align:center;
 	font-family: 'black', sans-serif;
+	margin: 2em 0;
 }
 
 #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-image {
@@ -1566,6 +1572,61 @@ ul.social-media:after,
 #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-url a {
 	text-decoration:none;
 	text-transform:uppercase;
+}
+
+/* Sidebar Button ========================================== */
+
+.widget-area #custom-sidebar-button {
+	padding: 1em 2em;
+	margin: 2.5em;
+	background-color:#808080;
+	text-align: center;
+}
+
+.widget-area #custom-sidebar-button .sidebar-button {
+	padding:0;
+	margin:0;
+}
+.widget-area #custom-sidebar-button a{
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0;
+	margin: 0;
+	letter-spacing: 1.5px;
+}
+
+/* Sidebar Contact Form =====================================*/
+
+.widget-area .form-quick-contact-wrapper {
+	margin: 0 2.5em;
+	padding: 0;
+}
+
+.widget-area .form-quick-contact-wrapper h2 {
+	text-transform: uppercase;
+	text-align: center;
+	color: #006EB6;
+	font-family: 'bold', sans-serif;
+	margin-bottom: .5em;
+	font-size: 1.4em;
+}
+
+/* Sidebar Contact Page Directions =========================================*/
+
+.widget-area #address-phone {
+	background: url(imgs/tree-white.svg);
+	background-size: cover;
+	background-position: center 50%;
+	background-repeat: no-repeat;
+	background-color:#73C92D;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+}
+
+.widget-area #address-phone .btn {
+	color: #fff;
+	border-color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1965,8 +2026,24 @@ object {
 }
 
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+	max-width: 100%;
 }
+
+@media screen and (min-width: 450px) {
+	.gallery-columns-3 .gallery-item {
+		max-width: 50%;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.gallery-columns-3 .gallery-item {
+		max-width: 33.3%;
+	}
+}
+
+/*.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}*/
 
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
@@ -1994,6 +2071,9 @@ object {
 
 .gallery-caption {
 	display: block;
+	color:#006EB6;
+	padding-top: 10px;
+	font-size: .9em;
 }
 
 /*--------------------------------------------------------------
@@ -2391,6 +2471,7 @@ ol.carousel-nav li.active a:hover {
 	position: relative;
 	text-align:center;
 	font-family: 'black', sans-serif;
+	letter-spacing: 1px;
 }
 
 #home-highlight-inner-wrapper .highlight-image {
