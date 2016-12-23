@@ -103,7 +103,7 @@ function mm4_you_contact_page_form() {
 			<?php $recipients = get_option('mm4-you-cf-email-add'); ?>
 			<input type="hidden" value="<?php echo $recipients; ?>" name="recipients" id="recipients">
 			<input type="hidden" value="Online Contact Form for <?php echo bloginfo('name'); ?>" name="subject" id="subject">
-			<label for="contact-names"><span class="asterisk">*</span> Name</label>
+			<label for="contact-names"><span class="asterisk"></span> Name</label>
 			<input type="text" id="contact-names" name="contact-names">
 			<label for="contact-company">Company</label>
 			<input type="text" id="contact-company" name="contact-company">
@@ -111,9 +111,9 @@ function mm4_you_contact_page_form() {
 			<input type="text" id="contact-add1" name="contact-add1">
 			<label for="contact-add2">Address 2</label>
 			<input type="text" id="contact-add2" name="contact-add2">
-			<label for="contact-email"><span class="asterisk">*</span> Email</label>
+			<label for="contact-email"><span class="asterisk"></span> Email</label>
 			<input type="email" id="contact-email" name="contact-email">
-			<label for="contact-phone"><span class="asterisk">*</span> Phone</label>
+			<label for="contact-phone"><span class="asterisk"></span> Phone</label>
 			<input type="tel" id="contact-phone" name="contact-phone">
 			<label for="contact-comments">Comments</label>
 			<textarea name="contact-comments" rows="5" id="contact-comments"></textarea>

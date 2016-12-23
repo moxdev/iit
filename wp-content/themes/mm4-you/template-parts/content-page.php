@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if( function_exists(get_field) ) { 
+	<?php if( function_exists(get_field) ) {
 		$onPageTitle = get_field('on_page_title');
 		if($onPageTitle) { ?>
 		<header class="entry-header">
@@ -20,7 +20,7 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-	<?php } 
+	<?php }
 	} else { ?>
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -35,12 +35,17 @@
 				'after'  => '</div>',
 			) );
 		?>
+		<?php if ( function_exists(mm4_employee_portal_links) ) {
+		    mm4_employee_portal_links();
+		} ?>
 	</div><!-- .entry-content -->
-	
+
+
+
 	<?php if( function_exists(mm4_you_contact_page_form) ) {
 		mm4_you_contact_page_form();
 	} ?>
-	
+
 	<?php if( function_exists(mm4_you_home_carousel_type_2_controls) ) {
 		mm4_you_home_carousel_type_2_controls();
 	} ?>

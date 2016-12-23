@@ -42,8 +42,8 @@ function mm4_you_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('blog-feature', 200, 200, true);
-	add_image_size('front-page-slide-1', 1400, 535, true);
-	add_image_size('front-page-slide-2', 1400, 800, true);
+	add_image_size('front-page-slide-1', 1400, 535, false);
+	add_image_size('front-page-slide-2', 1400, 800, false);
 	add_image_size('gallery-main', 1400, 950, true);
 	add_image_size('gallery-thumb', 300, 200, true);
 	add_image_size('highlight', 500, 450, true);
@@ -126,6 +126,15 @@ function mm4_you_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'mm4_you_widgets_init' );
+
+// function mm4_body_classes( $classes ) {
+
+// 	if ( is_singular() && is_front_page() )
+// 		$classes[] = 'singular';
+
+// 	return $classes;
+// }
+// add_filter( 'body_class', 'mm4_body_classes' );
 
 function register_jquery()  {
 	if (!is_admin()) {
@@ -243,9 +252,14 @@ function mm4_you_page_subnav() {
  * SIDEBAR CUSTOM WYSIWYG
  */
 
+
+
 function mm4_you_sidebar_wysiwyg() {
 	if( function_exists('get_field') ) {
-		$sideWYSIWYG = get_field('sidebar_text');
+
+		$blogPage = get_option( 'page_for_posts' );
+		$sideWYSIWYG = get_field('sidebar_text', $blogPage);
+
 		if($sideWYSIWYG) { ?>
 			<aside id="custom-sidebar-wysiwyg">
 				<?php echo $sideWYSIWYG; ?>
@@ -256,9 +270,11 @@ function mm4_you_sidebar_wysiwyg() {
 
 function mm4_you_sidebar_attached_link() {
 	if( function_exists('get_field') ) {
-		if( have_rows( 'sidebar_link' ) ): ?>
+		$blogPage = get_option( 'page_for_posts' );
+
+		if( have_rows( 'sidebar_link', $blogPage ) ): ?>
 			<aside id="custom-sidebar-link">
-				<?php while ( have_rows( 'sidebar_link' ) ): the_row();
+				<?php while ( have_rows( 'sidebar_link', $blogPage ) ): the_row();
 					$url = get_sub_field( 'sidebar_link_url' );
 					$text = get_sub_field( 'sidebar_link_text' );
 				?>
@@ -342,7 +358,7 @@ function mm4_you_contact_page_sidebar() {
 
 		if($add || $city || $state || $zip || $ph || $fx || $email) { ?>
 			<aside id="address-phone">
-				<?php if($name): ?><span class="side-contact" id="side-address-1"><?php echo $name; ?></span><?php endif;
+				<?php if($name): ?><span class="side-contact" id="side-name"><?php echo $name; ?></span><?php endif;
 				if($add): ?><span class="side-contact" id="side-address-1"><?php echo $add; ?></span><?php endif;
 				if($city): ?><span class="side-contact" id="side-city"><?php echo $city; ?></span><?php endif; if($city || $state || $zip): ?><span class="comma">, </span><?php endif; if($state): ?><span class="side-contact" id="side-state"><?php echo $state; ?> </span><?php endif; if($zip): ?><span class="side-contact" id="side-zip"><?php echo $zip; ?></span><?php endif;
 				if($ph): ?><span class="side-contact" id="side-phone"><a href="tel:<?php echo $ph; ?>" class="tel">Phone: <?php echo $ph; ?></a></span><?php endif;
@@ -356,7 +372,7 @@ function mm4_you_contact_page_sidebar() {
 						<input type="text" id="start" name="start">
 						<input type="hidden" id="end" name="end" value="<?php echo $add . ', ' . $city . ', ' . $state . ' ' . $zip; ?>">
 						<div class="error-box" id="map-error"></div>
-						<input type="button" onclick="calcRoute();" value="Get Directions" class="btn">
+						<input type="button" onclick="calcRoute();" value="Get Directions&raquo;" class="btn">
 					</form>
 					<div id="directions-panel"></div>
 				</div>
@@ -574,4 +590,29 @@ function mm4_you_photo_gallery() {
 			<?php endif;
 		}
 	}
+}
+
+//  Employee Portal
+
+function mm4_employee_portal_links() {
+    if ( function_exists( 'get_field' ) ) {
+        if ( have_rows( 'employee_portal_links' ) ): ?>
+            <div id="employee-portal">
+                <div class="employee-portal-wrapper">
+
+                <?php while ( have_rows( 'employee_portal_links' ) ) : the_row();
+                	$url = get_sub_field('employee_portal_url');
+                	$linkText = get_sub_field( 'employee_portal_link_text' );  ?>
+
+                	<div class="portal-highlight">
+                		<a href="<?php echo $url; ?>" class="employee-link"><img src="<?php echo get_template_directory_uri() . '/imgs/green-tree.png'?>" class="employee-green-tree"><?php echo $linkText; ?></a>
+                	</div>
+
+                <?php endwhile; ?>
+
+                </div>
+            </div>
+
+        <?php endif;
+    }
 }

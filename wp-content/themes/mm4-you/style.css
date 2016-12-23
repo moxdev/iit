@@ -278,6 +278,7 @@ th {
 	padding: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -360,7 +361,7 @@ h6 {
 }
 
 h1 {
-	font-size: 1.6em;
+	font-size: 1.5em;
 	margin:0 0 .2em 0;
 	font-weight:normal;
 	text-transform:uppercase;
@@ -464,7 +465,7 @@ html {
 }
 
 body {
-	background: #000000; /* Fallback for when there is no custom background color defined. */
+	background: #006EB6; /* Fallback for when there is no custom background color defined. */
 	color:#FFF;
 }
 
@@ -532,7 +533,7 @@ table {
 
 @media screen and (min-width:975px) {
 	body {
-		background: #000000; /* Fallback for when there is no custom background color defined. */
+		background: #006EB6; /* Fallback for when there is no custom background color defined. */
 	}
 }
 
@@ -996,11 +997,22 @@ nav ul, ul.social-media, #mobile-menu ul {
 	.menu-toggle {
 		width:40px;
 		height:40px;
-		/*background-position:0 -535px;*/
+		background-size: 40px;
+	}
+
+	.menu-toggle::before {
+		right: 90px;
+		top:37px;
+		font-size: 1.2em;
+		margin-right: .5em;
 	}
 
 	.menu-toggle:hover {
 		/*background-position:0 -573px;*/
+	}
+
+	.page-template-frontpage-a .form-quick-contact-wrapper h2, .page-template-frontpage-b .form-quick-contact-wrapper h2 {
+		font-size: 2.3em;P
 	}
 }
 
@@ -1622,11 +1634,23 @@ ul.social-media:after,
 	background-color:#73C92D;
 	color: #fff;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	padding: 2em;
+	margin: 2.5em 2.5em 0;
+}
+
+.widget-area #address-phone #side-name, .widget-area #address-phone #side-fax {
+	padding-bottom: 1em;
+}
+
+.widget-area #address-phone #side-phone {
+	padding-top: 1em;
 }
 
 .widget-area #address-phone .btn {
 	color: #fff;
 	border-color: #fff;
+	font-size: 1em;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 }
 
 /*--------------------------------------------------------------
@@ -1683,7 +1707,7 @@ ul.social-media:after,
 	}
 
 	#content .wrapper {
-		padding-top:1.3em;
+		padding: 1.3em 2em 0;
 	}
 }
 
@@ -1888,6 +1912,7 @@ aside#address-phone span#side-city, aside#address-phone span.comma, aside#addres
 
 .page-template-frontpage-a .form-quick-contact-wrapper, .page-template-frontpage-b .form-quick-contact-wrapper {
 	margin-bottom:1em;
+	margin-top:1em;
 	padding:1em 1em 0 1em;
 	/*border:1px solid #000;*/
 	background-color:transparent;
@@ -2081,7 +2106,7 @@ object {
 --------------------------------------------------------------*/
 .map-canvas {
 	border:1px solid #000;
-	height:250px;
+	height:175px;
 	margin:0 0 .5em;
 }
 
@@ -2126,12 +2151,11 @@ object {
 
 @media screen and (min-width:575px) {
 	#masthead {
-		padding-top:1.3em;
-		padding-bottom:1.3em;
+		padding: 1em 1.3em;
 	}
 
 	#masthead .site-branding img {
-		max-width:200px;
+		max-width:125px;
 	}
 }
 
@@ -2180,7 +2204,7 @@ object {
 	background-position: top right;
 	background-color:#006EB6;
 	padding-top:1.5em;
-	padding-bottom:6em;
+	padding-bottom:2em;
 	margin-top: 2em;
 }
 
@@ -2320,13 +2344,13 @@ object {
 	right:1em;
 	text-align:center;
 	text-transform: uppercase;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 	/*font-weight:700;*/
 	/*text-shadow:2px 2px 4px rgba(0, 0, 0, 1);*/
 }
 
 #home-carousel.carousel-type-1 .slide-brand-name .brand-bullet {
-	margin: 0 .5em;
+	margin: 0 2px;
 	color: #73C92D;
 }
 
@@ -2336,11 +2360,12 @@ object {
 
 #home-carousel.carousel-type-1 .slide-caption {
 	top: 11em;
-	font-size: 1rem;
+	font-size: 1em;
 }
 
 #home-carousel ul li img {
 	max-width:none;
+	top: 0;
 }
 
 ol.carousel-nav {
@@ -2396,9 +2421,21 @@ ol.carousel-nav li.active a:hover {
 }
 
 @media screen and (min-width:575px) {
-	#home-carousel.carousel-type-1 span {
-		font-size:2.2em;
-		top:1.7em;
+	#home-carousel.carousel-type-1 {
+		font-size: 1.7em;
+	}
+
+	#home-carousel.carousel-type-1 .slide-brand-name {
+		top: 1em;
+	}
+
+	#home-carousel.carousel-type-1 .slide-description {
+		top: 2em;
+	}
+
+	#home-carousel.carousel-type-1 .slide-caption {
+		top: 6.5em;
+		font-size: 1em;
 	}
 
 	#home-carousel.carousel-type-1 ol {
@@ -2408,7 +2445,7 @@ ol.carousel-nav li.active a:hover {
 
 @media screen and (min-width:725px) {
 	#home-carousel.carousel-type-1, #home-carousel.carousel-type-2 {
-		min-height:375px;
+		/*min-height:375px;*/
 	}
 
 	#home-carousel.carousel-type-1 span {
@@ -2419,11 +2456,16 @@ ol.carousel-nav li.active a:hover {
 	.page-template-frontpage-b #home-carousel.carousel-type-1 span {
 		top:2.25em;
 	}
+
+	#home-highlight-inner-wrapper .home-highlight span.highlight-url {
+		top: 60%;
+		/*font-size: 2em;*/
+	}
 }
 
 @media screen and (min-width:975px) {
 	#home-carousel.carousel-type-1, #home-carousel.carousel-type-2 {
-		min-height:450px;
+		/*min-height:450px;*/
 	}
 
 	#home-carousel.carousel-type-1 span {
@@ -2485,7 +2527,7 @@ ol.carousel-nav li.active a:hover {
 	font-size:1.1em;
 	line-height:1.1;
 	color: #fff;
-	padding: 0 1.9em;
+	padding: 0 1.6em;
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
 	             0px 8px 13px rgba(0,0,0,0.1),
 	             0px 18px 23px rgba(0,0,0,0.1);
@@ -2500,7 +2542,7 @@ ol.carousel-nav li.active a:hover {
 	top: 30%;
 	font-size:1.8em;
 	font-weight:700;
-	margin:0 0 .2em 0;
+	margin-bottom: 1em;
 }
 
 #home-highlight-inner-wrapper .home-highlight span.highlight-url {
@@ -2520,6 +2562,20 @@ ol.carousel-nav li.active a:hover {
 #home-highlight-inner-wrapper .home-highlight span.highlight-url a {
 	text-decoration:none;
 	text-transform:uppercase;
+}
+
+@media screen and (min-width:575px) {
+	#home-highlight-inner-wrapper {
+		padding: 0 2em;
+	}
+
+	#home-highlight-inner-wrapper .home-highlight span.highlight-title {
+		font-size: 3em;
+	}
+
+	#home-highlight-inner-wrapper .home-highlight span.highlight-url {
+		font-size: 1.7em;
+	}
 }
 
 @media screen and (min-width:725px) {
@@ -2771,5 +2827,40 @@ ol.carousel-nav li.active a:hover {
 @media screen and (min-width:1450px) {
 	#gallery-main {
 		min-height:725px;
+	}
+}
+
+/*--------------------------------------------------------------
+## Employee Portal Page
+--------------------------------------------------------------*/
+
+#employee-portal {
+	margin-top: 3em;
+	text-align: center;
+}
+
+.portal-highlight {
+	margin-bottom: 2em;
+}
+
+#employee-portal .employee-green-tree {
+	display: block;
+	margin: 0 auto;
+}
+
+@media screen and (min-width:550px) {
+	.employee-portal-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.portal-highlight {
+		flex: 1 1 50%;
+	}
+}
+
+@media screen and (min-width:760px) {
+	.portal-highlight {
+		flex: 1 1 33%;
 	}
 }
