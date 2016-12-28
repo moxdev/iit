@@ -15,7 +15,7 @@ function mm4_you_customize_register( $wp_customize ) {
 	//$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	//$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	$wp_customize->remove_section("colors");
-	
+
 	// GENERAL CONTACT INFORMATION
 	$wp_customize->add_section(
         'company_contact_information',
@@ -75,6 +75,20 @@ function mm4_you_customize_register( $wp_customize ) {
 		'setting_address',
 		array(
 			'label' => 'Address',
+			'section' => 'company_contact_information',
+			'type' => 'text',
+		)
+	);
+	$wp_customize->add_setting(
+		'setting_address2',
+		array(
+			'sanitize_callback' => 'sanitize_text',
+		)
+	);
+	$wp_customize->add_control(
+		'setting_address2',
+		array(
+			'label' => 'Address 2',
 			'section' => 'company_contact_information',
 			'type' => 'text',
 		)
@@ -205,7 +219,7 @@ function mm4_you_customize_register( $wp_customize ) {
 			'type' => 'text',
 		)
 	);
-	
+
 	// SOCIAL MEDIA LINKS
 	$wp_customize->add_section(
         'social_media',

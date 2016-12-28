@@ -37,6 +37,7 @@
 	<?php if( function_exists(mm4_you_add_quick_contact_form) ) {
 		mm4_you_add_quick_contact_form();
 	} ?>
+
 	<?php if( function_exists(mm4_you_contact_page_sidebar) ) {
 		mm4_you_contact_page_sidebar();
 	} ?>

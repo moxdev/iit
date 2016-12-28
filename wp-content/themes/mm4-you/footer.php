@@ -45,17 +45,20 @@
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
 				<nav id="colophon-navigation" class="footer-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu', 'container' => '' ) ); ?>
+					<div id="ftr-portal"><a href="<?php echo site_url( '/employee-portal/' ) ?>"><?php esc_html_e( 'Employee Portal' ); ?></a></div>
 				</nav>
 			<?php endif; ?>
 			<div class="site-info">
 				<div class="company-info">
 					<?php $company = get_theme_mod( 'setting_name' );
 					$add = get_theme_mod('setting_address');
+					$add2 = get_theme_mod('setting_address2');
 					$city = get_theme_mod('setting_city');
 					$state = get_theme_mod('setting_state');
 					$zip = get_theme_mod('setting_zip');
 					if ($company): ?><span class="ftr-contact"><?php echo $company; ?><br></span><?php endif;
 					if($add): ?><span class="ftr-contact ftr-address"><?php echo $add; ?><br></span><?php endif;
+					if($add2): ?><span class="ftr-contact ftr-address"><?php echo $add2; ?><br></span><?php endif;
 					if ($city): ?><span class="ftr-contact"><?php echo $city; ?></span><?php echo ', ' ; endif;
 					if ($state): ?><span class="ftr-contact"><?php echo $state; ?></span><?php echo ' '; endif;
 					if($zip): ?><span class="ftr-contact"><?php echo $zip; ?></span><?php endif; echo "\n"; ?>

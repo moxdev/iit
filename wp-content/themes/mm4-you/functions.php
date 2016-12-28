@@ -249,20 +249,80 @@ function mm4_you_page_subnav() {
 }
 
 /**
- * SIDEBAR CUSTOM WYSIWYG
+ * ADD STYLES TO WYSIWYG
+ */
+// Insert 'styleselect' into the $buttons array
+function my_mce_buttons_2( $buttons ) {
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+// Use 'mce_buttons' for button row #1, mce_buttons_3' for button row #3
+add_filter('mce_buttons_2', 'my_mce_buttons_2');
+
+function my_mce_before_init_insert_formats( $init_array ) {
+    $style_formats = array(
+		array(
+            'title' => 'Button', // Title to show in dropdown
+            'inline' => 'a', // Element to add class to
+            'classes' => 'wysiwyg-btn' // CSS class to add
+        )
+    );
+    $init_array['style_formats'] = json_encode( $style_formats );
+    return $init_array;
+}
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+// EDITOR STYLES
+
+function mm4_you_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'mm4_you_add_editor_styles' );
+
+/**
+ * SIDEBAR CUSTOM WYSIWYG FOR POSTS PAGE
  */
 
-
-
-function mm4_you_sidebar_wysiwyg() {
+function mm4_you_posts_sidebar_wysiwyg() {
 	if( function_exists('get_field') ) {
 
 		$blogPage = get_option( 'page_for_posts' );
-		$sideWYSIWYG = get_field('sidebar_text', $blogPage);
+		$sideWYSIWYG = get_field('sidebar_for_posts', $blogPage);
 
 		if($sideWYSIWYG) { ?>
 			<aside id="custom-sidebar-wysiwyg">
-				<?php echo $sideWYSIWYG; ?>
+				<?php echo $sideWYSIWYG ?>
+			</aside>
+		<?php }
+
+		if( have_rows( 'sidebar_link_for_posts', $blogPage ) ): ?>
+			<aside id="custom-sidebar-link">
+				<?php while ( have_rows( 'sidebar_link_for_posts', $blogPage ) ): the_row();
+					$url = get_sub_field( 'posts_sidebar_link_url' );
+					$text = get_sub_field( 'posts_sidebar_link_text' );
+				?>
+					<div class="sidebar-link">
+						<a href="<?php echo $url; ?>"><?php echo $text; ?></a>
+					</div>
+				<?php endwhile; ?>
+			</aside>
+		<?php
+		endif;
+	}
+}
+
+/**
+ * SIDEBAR CUSTOM WYSIWYG
+ */
+
+function mm4_you_sidebar_wysiwyg() {
+	if( function_exists('get_field') ) {
+		$blogPage = get_option( 'page_for_posts' );
+		$sideWYSIWYG = get_field('sidebar_text');
+
+		if($sideWYSIWYG) { ?>
+			<aside id="custom-sidebar-wysiwyg">
+				<?php echo $sideWYSIWYG ?>
 			</aside>
 		<?php }
 	}
@@ -270,11 +330,10 @@ function mm4_you_sidebar_wysiwyg() {
 
 function mm4_you_sidebar_attached_link() {
 	if( function_exists('get_field') ) {
-		$blogPage = get_option( 'page_for_posts' );
 
-		if( have_rows( 'sidebar_link', $blogPage ) ): ?>
+		if( have_rows( 'sidebar_link' ) ): ?>
 			<aside id="custom-sidebar-link">
-				<?php while ( have_rows( 'sidebar_link', $blogPage ) ): the_row();
+				<?php while ( have_rows( 'sidebar_link' ) ): the_row();
 					$url = get_sub_field( 'sidebar_link_url' );
 					$text = get_sub_field( 'sidebar_link_text' );
 				?>
@@ -431,7 +490,9 @@ function mm4_you_home_carousel_type_1() {
 						$image = wp_get_attachment_image_src($imageArr[id], 'front-page-slide-1');
 						$title = get_sub_field('slide_title');
 						$caption = get_sub_field('slide_caption');?>
+
 						<img src="<?php echo $image[0] ?>" alt="<?php echo $imageArr[title]; ?>">
+
 						<div class="slide-brand-name">I<span class="brand-bullet">&#8226;</span>I<span class="brand-bullet">&#8226;</span>T<span class="brand-bullet">&#8226;</span>C</div>
 						<div class="slide-description"><?php echo $title; ?></div>
 						<div class="slide-caption"><?php echo $caption; ?></div>

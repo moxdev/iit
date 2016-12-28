@@ -50,9 +50,9 @@
 				<button class="menu-toggle" aria-expanded="false"><span class="menu-title"></span><?php esc_html_e( '', 'mm4-you' ); ?></button>
 			<?php endif;
 
-			if($ph): ?><div id="masthead-tel"><a class="tel" href="tel:<?php echo $ph; ?>"><?php echo $ph; ?></a></div><?php endif; ?>
+			?><div id="masthead-tel"><a href="<?php echo site_url( '/employee-portal/' ) ?>"><?php esc_html_e( 'Employee Portal' ); ?></a></div><?php
 
-			<?php if ( has_nav_menu( 'aux' ) && !is_page_template('frontpage-b.php') ) : ?>
+			if ( has_nav_menu( 'aux' ) && !is_page_template('frontpage-b.php') ) : ?>
 				<nav id="aux-navigation" class="aux-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'aux', 'menu_id' => 'aux-menu', 'container' => '' ) ); ?>
 				</nav>
