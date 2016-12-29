@@ -68,7 +68,7 @@ function mm4_you_quick_contact_form() {
 				</div>
 			</div>
 			<div class="flex form-submit">
-				<div>
+				<div class="contact-button">
 					<input type="submit" value="Contact Us &raquo;">
 				</div>
 			</div>

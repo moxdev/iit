@@ -904,6 +904,10 @@ nav ul, ul.social-media, #mobile-menu ul {
 	font-size:.9em;
 }
 
+.main-navigation ul li.current-menu-item a {
+	color:#73C92D;
+}
+
 .main-navigation ul li:last-child a  {
 	padding-right:.175em;
 }
@@ -1635,8 +1639,7 @@ ul.social-media:after,
 /* Sidebar Hot Jobs ======================================= */
 
 .widget-area #hot-jobs-sidebar {
-	padding: 0 2.25rem;
-	/*margin-top: 2em;*/
+	margin: 0 2.5em 0;
 	letter-spacing: 1px;
 }
 
@@ -1668,19 +1671,18 @@ ul.social-media:after,
 	bottom: 0;
 	left: 0;
 	right: 0;
-	top: 30%;
-	font-size:1.8em;
-	/*margin:0 0 .2em 0;*/
+	top: 25%;
+	font-size:1.6rem;
 	text-transform: uppercase;
 }
 
 #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-url {
-	/*margin:1em 0 0 0;*/
 	position: absolute;
 	top: 60%;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	font-size:.9rem;
 }
 
 #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight, #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight a {
@@ -1700,7 +1702,6 @@ ul.social-media:after,
 
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-title {
 		font-size:2rem;
-		/*margin:0 0 .2rem 0;*/
 	}
 
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-url {
@@ -1711,7 +1712,7 @@ ul.social-media:after,
 
 @media screen and (min-width:400px) {
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight span {
-		padding: 0 3.4rem;
+		padding: 0 3rem;
 	}
 
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-title {
@@ -1720,27 +1721,31 @@ ul.social-media:after,
 
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-url {
 		top: 65%;
-		font-size:1.3rem;
+		font-size:1.2rem;
 	}
 }
 
 @media screen and (min-width:489px) {
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight span {
-		padding: 0 3.4rem;
+		padding: 0 1rem;
 	}
 
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-title {
-		font-size:3.125rem;
-		top: 25%;
+		font-size:2.8rem;
+		top: 20%;
 	}
 
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-url {
-		top: 60%;
-		font-size:1.5234375rem;
+		top: 65%;
+		font-size:1.3rem;
 	}
 }
 
 @media screen and (min-width:975px) {
+	.widget-area #hot-jobs-sidebar {
+		margin: 0 0 2.5em;
+	}
+
 	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight span {
 		padding: 0 .3em;
 	}
@@ -1755,9 +1760,28 @@ ul.social-media:after,
 		font-size:1.2rem;
 	}
 }
+
+@media screen and (min-width:1015px) {
+	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight span {
+		padding: 0 1.3em;
+	}
+
+	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-title {
+		font-size:2.3rem;
+		top: 25%;
+	}
+
+	#hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight .hot-jobs-url {
+		top: 65%;
+		font-size:1.2rem;
+	}
+}
 /* Sidebar Button ========================================== */
 
 .widget-area #custom-sidebar-button {
+	background: url(imgs/swoosh.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
 	padding: 1em 2em;
 	margin: 2.5em;
 	background-color:#808080;
@@ -1777,6 +1801,12 @@ ul.social-media:after,
 	letter-spacing: 1.5px;
 }
 
+@media screen and (min-width:975px) {
+	.widget-area #custom-sidebar-button {
+		margin: 2.5em 0;
+	}
+}
+
 /* Sidebar Contact Form =====================================*/
 
 .widget-area .form-quick-contact-wrapper {
@@ -1791,6 +1821,29 @@ ul.social-media:after,
 	font-family: 'bold', sans-serif;
 	margin-bottom: .5em;
 	font-size: 1.4em;
+}
+
+@media screen and (min-width:975px) {
+	.widget-area .form-quick-contact-wrapper {
+		margin: 0;
+		padding: 0 1em 0 2em;
+		border-left: 1px solid #006EB6;
+	}
+
+	.widget-area .form-quick-contact-wrapper h2 {
+		text-align: left;
+	}
+
+	.widget-area .form-quick-contact-wrapper .contact-button {
+		background-color: #73C92D;
+		color: #fff;
+	}
+
+	.widget-area .form-quick-contact-wrapper input[type="submit"] {
+		border: none;
+		color: #fff;
+	}
+
 }
 
 /* Sidebar Contact Page Directions =========================================*/
@@ -1926,21 +1979,20 @@ ul.social-media:after,
 		max-width: 1400px;
 	}
 
-
-
 	.page-template-frontpage-a #content .wrapper, .page-template-frontpage-b #content .wrapper {
 		padding-bottom:0;
 	}
 
 	#primary {
 		float:left;
-		width:63%;
+		width:64.5%;
 	}
 
 	#secondary {
+		max-width: 325px;
 		float:right;
-		width:34.5%;
-		padding:0 1.3em 0 0;
+		width:33.5%;
+		padding:0 1.3em 0 0;margin-top: .5em;
 	}
 
 	.page-template-page-subnav #primary {
@@ -1982,11 +2034,11 @@ ul.social-media:after,
 	}
 
 	#primary {
-		width:64%;
+		width:65.5%;
 	}
 
 	#secondary {
-		width:35.5%;
+		width:34%;
 	}
 }
 
@@ -2085,12 +2137,12 @@ article.post {
 	/*margin-bottom:1.5em;*/
 }
 
-#secondary aside, .form-quick-contact-wrapper {
+.form-quick-contact-wrapper {
 	padding-left:1.2em;
 	padding-right:1.2em;
 }
 
-#secondary aside, .form-quick-contact-wrapper {
+.form-quick-contact-wrapper {
 	font-size:.9em;
 }
 
@@ -2122,7 +2174,7 @@ aside#address-phone span#side-city, aside#address-phone span.comma, aside#addres
 }
 
 @media screen and (min-width:575px) {
-	#secondary aside, .form-quick-contact-wrapper {
+	.form-quick-contact-wrapper {
 		padding-left:1.5em;
 		padding-right:1.5em;
 		padding-bottom:1.3em;
@@ -2132,9 +2184,9 @@ aside#address-phone span#side-city, aside#address-phone span.comma, aside#addres
 		padding-top:1.3em;
 	}
 
-	#secondary aside {
+/*	#secondary aside {
 		padding-top:0;
-	}
+	}*/
 
 	.page-template-frontpage-a .form-quick-contact-wrapper, .page-template-frontpage-b .form-quick-contact-wrapper {
 		margin:1.5em;
@@ -2143,10 +2195,10 @@ aside#address-phone span#side-city, aside#address-phone span.comma, aside#addres
 }
 
 @media screen and (min-width:975px) {
-	#secondary aside {
+	/*#secondary aside {
 		padding-left:0;
 		padding-right:0;
-	}
+	}*/
 
 	.page-template-frontpage-a .form-quick-contact-wrapper, .page-template-frontpage-b .form-quick-contact-wrapper {
 		padding:1.5em 3.5em 1.5em;
