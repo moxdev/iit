@@ -396,6 +396,7 @@ function mm4_you_contact_page_sidebar() {
 	if(is_page_template('page-contact.php')) {
 		$name = get_theme_mod('setting_name');
 		$add = get_theme_mod('setting_address');
+		$add2 = get_theme_mod('setting_address2');
 		$city = get_theme_mod('setting_city');
 		$state = get_theme_mod('setting_state');
 		$zip = get_theme_mod('setting_zip');
@@ -418,7 +419,7 @@ function mm4_you_contact_page_sidebar() {
 		if($add || $city || $state || $zip || $ph || $fx || $email) { ?>
 			<aside id="address-phone">
 				<?php if($name): ?><span class="side-contact" id="side-name"><?php echo $name; ?></span><?php endif;
-				if($add): ?><span class="side-contact" id="side-address-1"><?php echo $add; ?></span><?php endif;
+				if($add2): ?><span class="side-contact" id="side-address-1"><?php echo $add2; ?></span><?php endif;
 				if($city): ?><span class="side-contact" id="side-city"><?php echo $city; ?></span><?php endif; if($city || $state || $zip): ?><span class="comma">, </span><?php endif; if($state): ?><span class="side-contact" id="side-state"><?php echo $state; ?> </span><?php endif; if($zip): ?><span class="side-contact" id="side-zip"><?php echo $zip; ?></span><?php endif;
 				if($ph): ?><span class="side-contact" id="side-phone"><a href="tel:<?php echo $ph; ?>" class="tel">Phone: <?php echo $ph; ?></a></span><?php endif;
 				if($fx): ?><span class="side-contact" id="side-fax"><a href="fax:<?php echo $fx; ?>" class="tel">Fax: <?php echo $fx; ?></a></span><?php endif;

@@ -1855,9 +1855,8 @@ ul.social-media:after,
 	background-repeat: no-repeat;
 	background-color:#73C92D;
 	color: #fff;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 	padding: 2em;
-	margin: 2.5em 2.5em 0;
+	margin: 2.5em 1em 0;
 }
 
 .widget-area #address-phone #side-name, .widget-area #address-phone #side-fax {
@@ -1872,7 +1871,6 @@ ul.social-media:after,
 	color: #fff;
 	border-color: #fff;
 	font-size: 1em;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
 }
 
 /*--------------------------------------------------------------
@@ -1931,26 +1929,13 @@ ul.social-media:after,
 	#masthead .wrapper, #colophon .wrapper, #content #primary {
 		padding-left:1.3em;
 		padding-right:1.3em;
+		line-height: 1.5;
 	}
 
 	#content .wrapper {
 		padding: 1.3em 2em 0;
 	}
 }
-
-/*@media screen and (min-width:760px) {
-	#primary {
-		float:left;
-		width:50%;
-	}
-
-	#secondary {
-		float:right;
-		width:40%;
-		padding:0 1.3em 0 0;
-	}
-
-}*/
 
 @media screen and (min-width:975px) {
 	.page-template-frontpage-c.has-carousel #page {
@@ -1993,6 +1978,24 @@ ul.social-media:after,
 		float:right;
 		width:33.5%;
 		padding:0 1.3em 0 0;margin-top: .5em;
+	}
+
+	.page-template-page-contact #primary {
+		float: left;
+		width: 64.5%;
+		max-width: 800px;
+	}
+
+	.page-template-page-contact #secondary {
+		max-width: 350px;
+		float: right;
+		width: 33.5%;
+		padding: 0 1.3em 0 0;
+		margin-top: .5em;
+	}
+
+	.page-template-page-contact .widget-area #address-phone {
+		margin:0;
 	}
 
 	.page-template-page-subnav #primary {
@@ -2374,7 +2377,8 @@ object {
 # Header
 --------------------------------------------------------------*/
 #masthead {
-	background-image: url(imgs/nav-background-2.svg);
+	/*background-image: url(imgs/nav-background-2.svg);*/
+
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
@@ -3349,10 +3353,12 @@ ol.carousel-nav li.active a:hover {
 	.employee-portal-wrapper {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: flex-start;
 	}
 
 	.portal-highlight {
 		flex: 1 1 50%;
+		margin-top: 1em;
 	}
 }
 
