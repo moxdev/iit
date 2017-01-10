@@ -26,3 +26,7 @@
 /* iPad, Mini */
 760px
 1000px
+
+/* Gradient Nav */
+-moz-linear-gradient(100% 100% 223deg,#006EB6, #006EB6, #FFFFFF 100%)
+-webkit-gradient(linear, 100% 100%, 100% 100%, from(#006EB6), to(#006EB6), color-stop(0,#FFFFFF))
