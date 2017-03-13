@@ -58,6 +58,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		### Carousel
 		### Highlight Boxes
 	## Photo Gallery Page
+# Custom Trajan Font Targets
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -344,6 +345,7 @@ h5,
 h6 {
 	clear: both;
 	margin:0;
+	/*font-weight: normal;*/
 }
 
 .blog h1,
@@ -448,6 +450,7 @@ big {
 
 .cinzel {
 	font-family: 'Cinzel-Regular';
+	font-weight: bold;
 }
 
 @media screen and (min-width:600px) {
@@ -1055,18 +1058,6 @@ nav ul, ul.social-media, #mobile-menu ul {
 .menu-toggle:hover {
 	/*background-position:0 -495px;*/
 }
-
-/*.main-navigation ul li a {
-
-}*/
-
-#menu-item-1873 a .word2 {
-	font-family: 'Cinzel-Regular';
-}
-/*.careers-link a :first-child {}
-.trajan-font {
-	font-family: 'Cinzel-Regular';
-}*/
 
 @media screen and (min-width:575px) {
 	.menu-toggle {
@@ -2773,6 +2764,10 @@ object {
 	text-shadow:2px 2px 4px rgba(0, 0, 0, 1);
 }
 
+#home-carousel.carousel-type-1 .slide-brand-name {
+	font-family: 'Cinzel-Regular';
+}
+
 #home-carousel.carousel-type-1 .slide-brand-name .brand-bullet {
 	margin: 0 2px;
 	color: #73C92D;
@@ -3061,7 +3056,6 @@ ol.carousel-nav li.active a:hover {
 	font-size:1em;
 	line-height:1.1;
 	color: #fff;
-	padding: 0 1.6em;
 	text-shadow:2px 2px 4px rgba(0, 0, 0, 1);
 	padding: 0 3rem;
 }
@@ -3591,4 +3585,129 @@ ol.carousel-nav li.active a:hover {
 	.portal-highlight {
 		flex: 0 1 33.333%;
 	}
+}
+
+/*-----------------------------------------------------------------------------------------------
+# Custom Trajan Font Targets ( used in conjunction with lettering.js and custom-lettering.js )
+------------------------------------------------------------------------------------------------*/
+/* Custom Stylings for Trajan Font in the Nav */
+
+.why-nav-link a .word2 {
+	font-family: 'Cinzel-Regular';
+	font-size: .9em;
+}
+
+.contracts-nav-link a .word1 {
+	font-family: 'Cinzel-Regular';
+	font-size: .9em;
+}
+
+.about-nav-link a .word2 {
+	font-family: 'Cinzel-Regular';
+	font-size: .9em;
+}
+
+.leadership-nav-link a .word1 {
+	font-family: 'Cinzel-Regular';
+	font-size: .9em;
+}
+
+.leadership-nav-link a .word2 {
+	font-family: inherit;
+	font-size: .9em;
+}
+
+.community-nav-link a .word2 {
+	font-family: inherit;
+	font-size: .9em;
+}
+
+/* Trajan font for third home highlights IITC */
+#home-highlight-inner-wrapper  > .home-highlight:last-child > span {
+	padding:0 !important;
+}
+
+#home-highlight-inner-wrapper  > .home-highlight:last-child > .highlight-title .word1 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for Consulting Services hot job side bar IITC */
+.page-id-1816 #secondary #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight:last-child .hot-jobs-title {
+	padding:0 !important;
+}
+
+.page-id-1816 #secondary #hot-jobs-sidebar #hot-jobs-inner-wrapper .hot-jobs-highlight:last-child .hot-jobs-title .word1 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for IT Consulting Services sidebar-button IITC */
+.page-id-1816 #secondary #custom-sidebar-button .sidebar-btn a .word3 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for IITC Contracts sidebar-button IITC */
+.page-id-1818 #secondary #custom-sidebar-button .sidebar-btn a .word3 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for About IITC sidebar-button IITC */
+.page-id-1820 #secondary #custom-sidebar-button .sidebar-btn a .word2 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for IITC Leadership Team sidebar-button IITC */
+.page-id-1896 #secondary #custom-sidebar-button .sidebar-btn a .word3 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 Why IITC page */
+.page-id-1814 .entry-header h1 .word6 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 Hot Jobs Listing page */
+.page-id-1863 .entry-header h1 .word5 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 General Vacancies page */
+.page-id-2139 .entry-header h1 .word4 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 IT Consulting Services page */
+.page-id-1816 .entry-header h1 .word1 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 IITC Contracts page */
+.page-id-1818 .entry-header h1 .word1 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 About IITC page */
+.page-id-1820 .entry-header h1 .word2,
+.page-id-1820 .entry-header h1 .word3,
+.page-id-1820 .entry-header h1 .word4,
+.page-id-1820 .entry-header h1 .word5,
+.page-id-1820 .entry-header h1 .word6 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
+}
+
+/* Trajan font for H1 Leadership Team page */
+.page-id-1896 .entry-header h1 .word2 {
+	font-family: 'Cinzel-Regular' !important;
+	font-size: .9em;
 }
