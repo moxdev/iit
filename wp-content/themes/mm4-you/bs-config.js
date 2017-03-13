@@ -47,7 +47,7 @@ module.exports = {
     "logSnippet": true,
     "rewriteRules": false,
     "open": "local",
-    "browser": "firefoxdeveloperedition",
+    "browser": "google chrome",
     "xip": false,
     "hostnameSuffix": false,
     "reloadOnRestart": false,

@@ -818,6 +818,7 @@ a:active {
     content: " >>";
 }
 
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -1054,6 +1055,18 @@ nav ul, ul.social-media, #mobile-menu ul {
 .menu-toggle:hover {
 	/*background-position:0 -495px;*/
 }
+
+/*.main-navigation ul li a {
+
+}*/
+
+#menu-item-1873 a .word2 {
+	font-family: 'Cinzel-Regular';
+}
+/*.careers-link a :first-child {}
+.trajan-font {
+	font-family: 'Cinzel-Regular';
+}*/
 
 @media screen and (min-width:575px) {
 	.menu-toggle {
