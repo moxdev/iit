@@ -1648,11 +1648,23 @@ ul.social-media:after,
 /* Sidebar Link ========================================== */
 
 .widget-area #custom-sidebar-link {
+	background: url(imgs/swoosh.svg);
+	background-size: 99%;
+	background-repeat: no-repeat;
+	background-color:#006EB6;
 	padding: 1em 2.5em;
 	margin: 0 2.5em 0;
-	background-color:#808080;
+	/*background-color:#808080;*/
 	text-align: center;
 }
+
+/*background: url(imgs/swoosh.svg);
+background-size: cover;
+background-repeat: no-repeat;
+padding: 1em 2em;
+margin: 2.5em;
+background-color:#006EB6;
+text-align: center;*/
 
 .widget-area #custom-sidebar-link .sidebar-link {
 	padding:0;
