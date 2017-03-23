@@ -212,7 +212,7 @@ add_action( 'wp_enqueue_scripts', 'mm4_you_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -230,9 +230,13 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Job Post Listing.
+ */
+require get_template_directory() . '/inc/job-post-listing.php';
+
+/**
  * INCLUDE PLUGINS
  */
-
 
 include_once( get_stylesheet_directory() . '/plugins/mm4-you-contact-form/mm4-you-cf.php' );
 

@@ -1,6 +1,16 @@
 # Get list of Cats
 
 ```php
+<ul class="posts">
+    <?php query_posts('cat=6'); while (have_posts()) : the_post(); ?>
+        <li><a href='<?php the_permalink() ?>'><?php the_title(); ?></a></li>
+    <?php endwhile; ?>
+
+    <?php wp_reset_query(); ?>
+</ul>
+```
+
+```php
 <?php if (get_category('17')->category_count > 0) echo get_category('17')->cat_name; ?>
 
 <?php foreach (get_categories() as $category){

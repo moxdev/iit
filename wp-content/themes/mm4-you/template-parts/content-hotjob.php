@@ -30,15 +30,7 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 
-		<ul class="posts">
-			<?php query_posts('cat=6'); while (have_posts()) : the_post(); ?>
-				<li><a href='<?php the_permalink() ?>'><?php the_title(); ?></a></li>
-			<?php endwhile; ?>
-
-			<?php wp_reset_query(); ?>
-		</ul>
-
-
+		<?php mm4_you_job_post_listing(); ?>
 
 		<?php
 			wp_link_pages( array(
