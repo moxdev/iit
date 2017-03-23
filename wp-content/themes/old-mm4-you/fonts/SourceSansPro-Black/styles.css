@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'SourceSansPro-Black';
+  src: url('SourceSansPro-Black.eot?#iefix') format('embedded-opentype'),  url('SourceSansPro-Black.otf')  format('opentype'),
+	     url('SourceSansPro-Black.woff') format('woff'), url('SourceSansPro-Black.ttf')  format('truetype'), url('SourceSansPro-Black.svg#SourceSansPro-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
