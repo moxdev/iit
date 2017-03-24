@@ -1,5 +1,7 @@
 <?php
 /**
+ * Custom Categories for Hot Jobs Post Listings.
+ *
  * Template part for displaying page content in page-hot-jobs.php.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -30,7 +32,9 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 
-		<?php mm4_you_job_post_listing(); ?>
+		<?php if ( function_exists( 'mm4_you_hot_job_post_listing' ) ) {
+		    mm4_you_hot_job_post_listing();
+		} ?>
 
 		<?php
 			wp_link_pages( array(

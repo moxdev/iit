@@ -58,6 +58,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 		### Carousel
 		### Highlight Boxes
 	## Photo Gallery Page
+	## Hot Jobs Listings
+	## General Job Vacancies
 # Custom Trajan Font Targets
 --------------------------------------------------------------*/
 
@@ -345,7 +347,7 @@ h5,
 h6 {
 	clear: both;
 	margin:0;
-	/*font-weight: normal;*/
+	font-weight: normal;
 }
 
 .blog h1,
@@ -936,6 +938,10 @@ nav ul, ul.social-media, #mobile-menu ul {
 
 .main-navigation ul li.current-menu-item a {
 	color:#73C92D;
+}
+
+.main-navigation ul li.current-menu-item .sub-menu li a {
+	color:#fff;
 }
 
 .main-navigation > ul > li:last-child a  {
@@ -3597,6 +3603,34 @@ ol.carousel-nav li.active a:hover {
 	.portal-highlight {
 		flex: 0 1 33.333%;
 	}
+}
+
+/*--------------------------------------------------------------
+## Hot Jobs Listings
+--------------------------------------------------------------*/
+.page-template-page-hot-jobs .entry-content .hot-jobs-posts {
+	margin: 0;
+	padding: 0;
+}
+
+.page-template-page-hot-jobs .entry-content .hot-jobs-posts li {
+	margin: 0;
+	padding: .5em 0;
+	list-style: none;
+}
+
+/*--------------------------------------------------------------
+## General Job Vacancies
+--------------------------------------------------------------*/
+.page-template-page-general-vacancies .entry-content .general-vacancies-posts {
+	margin: 0;
+	padding: 0;
+}
+
+.page-template-page-general-vacancies .entry-content .general-vacancies-posts li {
+	margin: 0;
+	padding: .5em 0;
+	list-style: none;
 }
 
 /*-----------------------------------------------------------------------------------------------

@@ -230,9 +230,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Job Post Listing.
+ * Hot Job Post Listing.
  */
-require get_template_directory() . '/inc/job-post-listing.php';
+require get_template_directory() . '/inc/hot-job-post-listing.php';
+
+/**
+ * General Vacancies Post Listing.
+ */
+require get_template_directory() . '/inc/general-vacancy-post-listing.php';
 
 /**
  * INCLUDE PLUGINS

@@ -10,28 +10,28 @@
 
 
 
-function mm4_you_job_post_listing() {
+function mm4_you_hot_job_post_listing() {
 
     $args = array(
-        'category_name' => 'hot_job'
+        'cat' => '6, 8'
     );
 
     // Custom query.
-    $query = new WP_Query( $args );
+    $hot_job_query = new WP_Query( $args );
 
     // Check that we have query results.
-    if ( $query->have_posts() ) {
+    if ( $hot_job_query->have_posts() ) {
 
         ?>
 
-        <ul class="posts">
+        <ul class="hot-jobs-posts">
 
         <?php
 
         // Start looping over the query results.
-        while ( $query->have_posts() ) {
+        while ( $hot_job_query->have_posts() ) {
 
-            $query->the_post(); ?>
+            $hot_job_query->the_post(); ?>
 
             <li><a href='<?php the_permalink() ?>'><?php the_title(); ?></a></li>
 
@@ -40,7 +40,9 @@ function mm4_you_job_post_listing() {
         }
 
         ?>
+
         </ul>
+
         <?php
     }
 
